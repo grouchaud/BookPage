@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "grouchaud"
+        ]
+    },
+    "bookpage": "name of book page",
+    "titlepdf": "Pdf page for titles",
+    "gp-new-title": "new title button"
+}

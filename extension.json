@@ -1,0 +1,31 @@
+{
+	"name": "BookPage",
+	"author": "Rouchaud Guillaume",
+	"version": "1.0.0",
+	"url": "https://www.mediawiki.org/wiki/BookPage-extension",
+	"descriptionmsg": "BookPage-desc",
+	"license-name": "GPL-2.0+",
+	"type": "parserhook",
+	"AutoloadClasses": {
+		"BookPage": "includes/BookPage.php",
+		"SpecialBookPage": "includes/SpecialBookPage.php",
+		"SpecialTitlePdf": "includes/SpecialTitlePdf.php"
+	},
+	"SpecialPages": {
+		"BookPage": "SpecialBookPage",
+		"TitlePdf": "SpecialTitlePdf"
+	},
+	"ExtensionMessagesFiles": {
+		"BookPageMagic": "BookPage.i18n.php"
+	},
+	"MessagesDirs": {
+		"MyExtension": [
+			"i18n"
+		]
+	},
+	"Hooks": {
+		"ParserFirstCallInit": ["BookPage::onParserSetup"],
+		"UnknownAction": ["BookPage::onUnknownAction"]
+	},
+	"manifest_version": 1
+}
