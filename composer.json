@@ -1,0 +1,7 @@
+{
+    "name": "BookPage",
+    "description": "Extension craeting Book namespace for titles implementation",
+    "type": "mediawiki-extension",
+    "require": {
+    }
+}
