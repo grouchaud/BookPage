@@ -51,14 +51,17 @@ class BookPage
             header("Refresh:0;");
         }
         if ($action == "bookpage") {
-     
+            // Auto Domains
+            $domain = $_SERVER['HTTP_HOST'];
+            //           $domain = "dokit";
+            $prefix = 'http://';
             $title = $article->getTitle();
             $name = $title->getBaseText();
             echo $name;
             $bookTitle = Title::newFromText($name, NS_BOOK);
             if ($bookTitle->isKnown()) {
                 // REMPLACER PAR SPECIALPAGE REORDER QUAND TERMINEE
-                header('Location: http://dokit/w/index.php/Special:BookPage?groupName='.$bookTitle->getBaseText());
+                header('Location: '.$prefix.$domain.'/w/index.php/Special:BookPage?groupName='.$bookTitle->getBaseText());
                 exit();
             } else {
                 $newWikiPage = new WikiPage( $bookTitle );
@@ -72,7 +75,7 @@ class BookPage
                 $pageContent = ContentHandler::makeContent( $bookSummary, $bookTitle );
                 $newWikiPage->doEditContent( $pageContent,
                     "Page created automatically by BookPage function" );
-                header('Location: http://dokit/w/index.php/Special:BookPage?groupName='.$bookTitle->getBaseText());
+                header('Location: '.$prefix.$domain.'/w/index.php/Special:BookPage?groupName='.$bookTitle->getBaseText());
                 exit();
                 
             }
