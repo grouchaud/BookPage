@@ -1,5 +1,5 @@
 {
-    "name": "BookPage",
+    "name": "grouchaud/book-page",
     "description": "Extension craeting Book namespace for titles implementation",
     "type": "mediawiki-extension",
     "require": {
